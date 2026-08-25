@@ -1,0 +1,397 @@
+<meta charset="utf-8">
+<title>Kickoff Téra</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Space+Mono:wght@400;700&display=swap">
+
+<style>
+:root{
+  --ground:#EDEDE9; --panel:#FAFAF9; --panel-2:#F2F2EF;
+  --ink:#131316; --muted:#74746E; --rule:#D8D8D2; --rule-hard:#B9B9B1;
+  --amber:#B26A22; --field:#FFFFFF; --field-line:#C9C9C2;
+  --shadow:0 1px 0 rgba(19,19,22,.04);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#121214; --panel:#1A1A1D; --panel-2:#202024;
+    --ink:#EDEDE9; --muted:#8F8F88; --rule:#2B2B30; --rule-hard:#3D3D44;
+    --amber:#D99A45; --field:#141417; --field-line:#3A3A41;
+    --shadow:0 1px 0 rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#121214; --panel:#1A1A1D; --panel-2:#202024;
+  --ink:#EDEDE9; --muted:#8F8F88; --rule:#2B2B30; --rule-hard:#3D3D44;
+  --amber:#D99A45; --field:#141417; --field-line:#3A3A41;
+  --shadow:0 1px 0 rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+  font-variation-settings:"wdth" 100,"wght" 400;
+  line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:"Space Mono",ui-monospace,monospace}
+
+/* ---------- topo ---------- */
+header{
+  border-bottom:1px solid var(--rule-hard);
+  padding:clamp(28px,6vw,64px) 0 clamp(22px,4vw,40px);
+  background:var(--panel);
+}
+.wrap{width:min(760px,calc(100% - 40px)); margin-inline:auto}
+.eyebrow{
+  font-family:"Space Mono",monospace; font-size:11px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 18px;
+}
+h1{
+  font-variation-settings:"wdth" 125,"wght" 700;
+  font-size:clamp(30px,7vw,58px); line-height:.98; letter-spacing:-.01em;
+  text-transform:uppercase; margin:0 0 18px; text-wrap:balance;
+}
+.lede{font-size:clamp(15px,2.2vw,17px); max-width:62ch; margin:0 0 8px; color:var(--ink)}
+.lede + .lede{margin-top:14px; color:var(--muted)}
+
+/* ---------- barra de progresso ---------- */
+.bar{
+  position:sticky; top:0; z-index:20; background:var(--panel);
+  border-bottom:1px solid var(--rule-hard);
+}
+.bar__in{
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+  padding:11px 0; font-family:"Space Mono",monospace; font-size:11px;
+  letter-spacing:.08em; text-transform:uppercase;
+}
+.track{flex:1 1 160px; height:3px; background:var(--rule); position:relative; min-width:120px}
+.track i{position:absolute; inset:0 auto 0 0; width:0; background:var(--amber); transition:width .25s ease}
+.count{font-variant-numeric:tabular-nums; color:var(--muted)}
+button{
+  font:inherit; font-family:"Space Mono",monospace; font-size:11px;
+  letter-spacing:.08em; text-transform:uppercase; cursor:pointer;
+  background:var(--ink); color:var(--ground); border:1px solid var(--ink);
+  padding:7px 14px; border-radius:0; transition:opacity .15s;
+}
+button:hover{opacity:.82}
+button.ghost{background:transparent; color:var(--ink); border-color:var(--rule-hard)}
+button:focus-visible, textarea:focus-visible, select:focus-visible, a:focus-visible{
+  outline:2px solid var(--amber); outline-offset:2px;
+}
+
+/* ---------- blocos ---------- */
+main{padding-bottom:120px}
+section{border-bottom:1px solid var(--rule-hard)}
+.sec-head{padding:clamp(30px,5vw,52px) 0 20px}
+.sec-head h2{
+  font-variation-settings:"wdth" 118,"wght" 700;
+  font-size:clamp(20px,3.4vw,30px); line-height:1.05; text-transform:uppercase;
+  margin:0 0 10px; letter-spacing:-.005em;
+}
+.who{
+  display:inline-block; font-family:"Space Mono",monospace; font-size:10.5px;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--ink);
+  border:1px solid var(--rule-hard); padding:4px 9px; margin-bottom:12px;
+}
+.sec-head p{margin:0; color:var(--muted); font-size:14.5px; max-width:60ch}
+
+.q{
+  border-top:1px solid var(--rule); padding:22px 0;
+  display:grid; grid-template-columns:46px 1fr; gap:0 16px; align-items:start;
+}
+.q__n{
+  font-family:"Space Mono",monospace; font-size:11px; color:var(--muted);
+  padding-top:3px; font-variant-numeric:tabular-nums;
+}
+.q__body{min-width:0}
+.q__t{font-size:15.5px; margin:0 0 6px; font-variation-settings:"wdth" 100,"wght" 500}
+.q__why{margin:0 0 12px; font-size:13.5px; color:var(--muted); max-width:64ch}
+.flag{
+  display:inline-block; font-family:"Space Mono",monospace; font-size:9.5px;
+  letter-spacing:.13em; text-transform:uppercase; vertical-align:2px;
+  background:var(--ink); color:var(--ground); padding:2px 6px; margin-left:8px;
+}
+textarea, select{
+  width:100%; font:inherit; font-size:14.5px; color:var(--ink);
+  background:var(--field); border:1px solid var(--field-line); border-radius:0;
+  padding:10px 12px; resize:vertical; box-shadow:var(--shadow);
+}
+textarea{min-height:76px}
+select{height:40px; margin-bottom:8px; max-width:280px}
+.done .q__n{color:var(--amber)}
+
+.sec-foot{padding:16px 0 clamp(30px,5vw,48px)}
+.sec-foot .hint{font-family:"Space Mono",monospace; font-size:11px; color:var(--muted); margin:10px 0 0}
+
+/* ---------- rodapé ---------- */
+footer{padding:clamp(34px,6vw,60px) 0; background:var(--panel)}
+footer p{margin:0 0 10px; color:var(--muted); font-size:13.5px; max-width:62ch}
+.toast{
+  position:fixed; left:50%; bottom:26px; transform:translate(-50%,14px);
+  background:var(--ink); color:var(--ground); padding:11px 20px;
+  font-family:"Space Mono",monospace; font-size:11.5px; letter-spacing:.06em;
+  opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; z-index:40;
+}
+.toast.on{opacity:1; transform:translate(-50%,0)}
+@media (prefers-reduced-motion: reduce){*{transition:none !important}}
+@media (max-width:560px){
+  .q{grid-template-columns:1fr; gap:6px}
+  .q__n{padding-top:0}
+}
+</style>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Téra × The Force · 24.08.2026</p>
+    <h1>Kickoff Téra</h1>
+    <p class="lede">Vinte e nove pontos que precisamos fechar para começar a identidade. Não é tudo para a mesma pessoa: cada bloco diz quem responde, e cada bloco tem seu próprio botão de copiar.</p>
+    <p class="lede">Doze estão marcados <strong>BLOQUEANTE</strong> — sem eles o desenho não avança. O resto pode vir depois. Suas respostas ficam salvas neste navegador enquanto você preenche.</p>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap bar__in">
+    <span class="count" id="count">0 / 29</span>
+    <span class="track"><i id="fill"></i></span>
+    <button id="copyAll">Copiar tudo</button>
+    <button class="ghost" id="clear">Limpar</button>
+  </div>
+</div>
+
+<main id="main"></main>
+
+<footer>
+  <div class="wrap">
+    <p>Ao terminar um bloco, clique em <strong>copiar bloco</strong> e cole a resposta no e-mail ou no WhatsApp. Nada é enviado automaticamente — esta página não guarda nada em servidor nenhum.</p>
+    <p class="mono" style="font-size:11px;letter-spacing:.08em">THE FORCE · IDENTIDADE TÉRA</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Copiado</div>
+
+<script>
+const BLOCKS = [
+ {
+  id:"decisao", n:"01", title:"Decisão de posicionamento",
+  who:"Responde: liderança / Ciao",
+  intro:"São escolhas, não informação — e são as que travam tudo. O deck de julho e a conversa mais recente apontam para lugares diferentes; precisamos saber qual vale.",
+  qs:[
+   {b:1,t:"O deck de julho posiciona a Téra como instituição cultural — “expandir a percepção”, Sul Global, regeneração de patrimônio. A conversa recente aponta para “mais entretenimento”. As duas coisas convivem, ou uma substitui a outra?",
+      w:"Se convivem, qual delas lidera na comunicação de lançamento? Isso muda o peso do desenho, o tom da voz e as referências inteiras."},
+   {b:1,t:"“Espetáculos multidimensionais” continua sendo a categoria oficial da marca?",
+      w:"A definição do deck é longa e conceitual. Se ela fica, precisamos de uma versão curta que o público entenda em cinco segundos — e ela precisa ser aprovada por vocês, não por nós."},
+   {b:1,t:"A programação mistura obras comissionadas, adaptações, exposições imersivas e eventos corporativos. Qual desses lidera o discurso público no lançamento?",
+      w:"“Comissionamos obras inéditas” e “recebemos exposições imersivas” constroem marcas diferentes. Podem coexistir na operação; na comunicação de lançamento, só uma pode vir primeiro."},
+   {b:1,t:"Como a Téra assina em relação à Mata São Paulo: marca independente, endossada (“por Mata São Paulo”) ou submarca?",
+      w:"Define se o logo da Téra caminha sozinho ou sempre acompanhado, e quanto ele pode se distanciar do desenho da Mata."},
+   {b:0,t:"O codinome “Sala Abaixo” está aposentado na comunicação externa a partir do reveal?",
+      w:""},
+   {b:1,t:"Quem aprova a identidade — uma pessoa ou um comitê? Nome e cargo.",
+      w:"Aprovação por comitê sem um decisor único é a causa mais comum de estouro de prazo em projeto de marca."}
+  ]
+ },
+ {
+  id:"negocio", n:"02", title:"Negócio e comunicação",
+  who:"Responde: marketing",
+  intro:"O que a marca vai ter que fazer no mundo real: onde ela aparece, para quem, com que frequência e ao lado de quem.",
+  qs:[
+   {b:1,t:"Qual a data-alvo do reveal público, e a data de abertura?",
+      w:"Tudo se organiza a partir daí — o que precisa estar pronto, em que ordem."},
+   {b:1,t:"Público prioritário na abertura: público de show, público de arte ou corporativo? Se for mais de um, em que ordem?",
+      w:""},
+   {b:0,t:"Bilheteria, temporada e line-up entram na comunicação desde o lançamento, ou só depois?",
+      w:"Marca de venue e marca de instituição se comportam de formas opostas na hora de dividir cartaz com nome de artista."},
+   {b:0,t:"Faixa de preço de ingresso prevista.", w:""},
+   {b:0,t:"Quantos eventos por ano, e em que mix — shows, exposições, festas, corporativo?",
+      w:"Define quantas peças o sistema vai ter que produzir por mês, e se ele precisa ser fácil de operar por terceiros."},
+   {b:0,t:"Quais canais próprios existem no lançamento — site, Instagram, newsletter? Os handles já estão reservados?",
+      w:""},
+   {b:0,t:"A comunicação é bilíngue português / inglês desde o início?",
+      w:"Se sim, a categoria precisa de uma tradução oficial fechada antes de qualquer peça sair."},
+   {b:0,t:"Existe verba de mídia definida? OOH entra no plano?",
+      w:"Fachada e OOH mudam as exigências de redução e contraste do desenho."},
+   {b:0,t:"Existem patrocinadores ou parceiros cujas marcas vão conviver com a Téra nas peças?",
+      w:"Precisamos saber antes de definir área de proteção e hierarquia de assinatura."}
+  ]
+ },
+ {
+  id:"ativos", n:"03", title:"Ativos pendentes",
+  who:"Responde: arquitetura / técnico",
+  intro:"Itens pedidos e ainda não recebidos. Aqui não precisamos de texto: só marcar a situação de cada um.",
+  status:true,
+  qs:[
+   {b:1,t:"Planta, cortes e elevações em escala (DWG ou PDF)",
+      w:"O documento de 21.08 responde “consultar a Planta enviada”, mas a planta não veio junto."},
+   {b:0,t:"Modelo 3D — Revit, SketchUp, IFC, FBX, OBJ ou GLB", w:""},
+   {b:1,t:"Medidas confirmadas face a face das 4 telas, e área total em m²",
+      w:"O diagrama enviado admite mais de uma leitura: 15,36 / 10,08 / 8,16 m aparecem em posições que não deixam claro qual cota é de qual face."},
+   {b:1,t:"O que exatamente o “32K” designa",
+      w:"Com o módulo P1.5 informado, a tela de fundo dá cerca de 9.984 × 5.304 px. Nenhuma face isolada chega a 32K — então o número deve ser uma soma. Precisamos saber qual, antes de ele virar afirmação pública."},
+   {b:0,t:"Fabricante, modelo e integrador do LED", w:""},
+   {b:0,t:"Foto do Drop-Off",
+      w:"O texto cita “a porta à direita da imagem”, mas a imagem não veio no arquivo."},
+   {b:0,t:"O que não é tela: piso, estrutura e acabamentos", w:""},
+   {b:0,t:"Fotos e vídeos: telas ligadas de outros ângulos, sala com telas desligadas mostrando a trama das grades, percurso de descida, materiais do trajeto",
+      w:"Registro de celular resolve, como vocês mesmos apontaram."},
+   {b:0,t:"Desenho cotado do padrão geométrico das grades de 1×1 m", w:""},
+   {b:1,t:"Vetores originais: wordmark “téra” e logos Mata São Paulo",
+      w:"Sem os vetores, qualquer regra de coassinatura fica no chute."}
+  ]
+ },
+ {
+  id:"nome", n:"04", title:"Nome e proteção",
+  who:"Responde: marketing / jurídico",
+  intro:"Antes de investir desenho num nome, precisamos saber se ele é defensável.",
+  qs:[
+   {b:1,t:"O nome “Téra” já foi depositado no INPI? Em quais classes?",
+      w:"Classe 41 (entretenimento e cultura) é a mínima."},
+   {b:0,t:"Qual domínio está registrado?", w:""},
+   {b:0,t:"Os handles de redes sociais já foram reservados? Quais?", w:""},
+   {b:0,t:"Existe risco conhecido de colisão com outra marca?",
+      w:"“Téra” sem acento colide com “tera” e com “terra” em busca. Se já houve consulta jurídica, queremos o parecer."}
+  ]
+ }
+];
+
+const STATUS = ["— selecione —","Temos, vamos enviar","Não existe","Vamos produzir","Não sei quem tem"];
+const store = {};
+let total = 0;
+
+const main = document.getElementById("main");
+BLOCKS.forEach(bl => {
+  const sec = document.createElement("section");
+  sec.innerHTML = `<div class="wrap sec-head">
+      <span class="who">${bl.who}</span>
+      <h2>${bl.n} · ${bl.title}</h2>
+      <p>${bl.intro}</p>
+    </div>`;
+  const list = document.createElement("div");
+  list.className = "wrap";
+
+  bl.qs.forEach((q,i) => {
+    total++;
+    const key = bl.id + "-" + (i+1);
+    const row = document.createElement("div");
+    row.className = "q";
+    row.dataset.key = key;
+    const num = String(i+1).padStart(2,"0");
+    const flag = q.b ? '<span class="flag">Bloqueante</span>' : "";
+    const why = q.w ? `<p class="q__why">${q.w}</p>` : "";
+    const sel = bl.status
+      ? `<select data-k="${key}-s">${STATUS.map(s=>`<option>${s}</option>`).join("")}</select>`
+      : "";
+    row.innerHTML = `<div class="q__n">${bl.n}.${num}</div>
+      <div class="q__body">
+        <p class="q__t">${q.t}${flag}</p>
+        ${why}${sel}
+        <textarea data-k="${key}" aria-label="Resposta ${bl.n}.${num}"
+          placeholder="${bl.status ? 'Observação, link ou responsável (opcional)' : 'Resposta'}"></textarea>
+      </div>`;
+    list.appendChild(row);
+    store[key] = {q:q.t, block:bl.title, who:bl.who, blocking:!!q.b, a:"", s:""};
+  });
+
+  const foot = document.createElement("div");
+  foot.className = "wrap sec-foot";
+  foot.innerHTML = `<button data-block="${bl.id}">Copiar bloco ${bl.n}</button>
+    <p class="hint">Cole no e-mail para quem respondeu este bloco.</p>`;
+  sec.appendChild(list); sec.appendChild(foot);
+  main.appendChild(sec);
+});
+
+document.getElementById("count").textContent = "0 / " + total;
+
+/* ---------- estado ---------- */
+const KEY = "tera-kickoff-2026-08";
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(store)); }catch(e){} }
+function load(){
+  let raw; try{ raw = localStorage.getItem(KEY); }catch(e){ return; }
+  if(!raw) return;
+  let d; try{ d = JSON.parse(raw); }catch(e){ return; }
+  Object.keys(d).forEach(k=>{
+    if(!store[k]) return;
+    store[k].a = d[k].a || ""; store[k].s = d[k].s || "";
+    const ta = document.querySelector(`textarea[data-k="${k}"]`);
+    if(ta) ta.value = store[k].a;
+    const se = document.querySelector(`select[data-k="${k}-s"]`);
+    if(se && store[k].s) se.value = store[k].s;
+  });
+}
+function answered(k){
+  const v = store[k];
+  return (v.a && v.a.trim()) || (v.s && v.s !== STATUS[0]);
+}
+function refresh(){
+  let n = 0;
+  Object.keys(store).forEach(k=>{
+    const on = answered(k); if(on) n++;
+    const row = document.querySelector(`.q[data-key="${k}"]`);
+    if(row) row.classList.toggle("done", !!on);
+  });
+  document.getElementById("count").textContent = n + " / " + total;
+  document.getElementById("fill").style.width = (n/total*100) + "%";
+}
+
+main.addEventListener("input", e=>{
+  const t = e.target;
+  if(t.tagName === "TEXTAREA"){ store[t.dataset.k].a = t.value; }
+  else if(t.tagName === "SELECT"){ store[t.dataset.k.replace(/-s$/,"")].s = t.value; }
+  save(); refresh();
+});
+
+/* ---------- copiar ---------- */
+function textFor(blockId){
+  const bl = blockId ? BLOCKS.find(b=>b.id===blockId) : null;
+  const out = [];
+  out.push(bl ? `TÉRA — KICKOFF · ${bl.n} ${bl.title.toUpperCase()}` : "TÉRA — KICKOFF · RESPOSTAS");
+  if(bl) out.push(bl.who);
+  out.push("");
+  BLOCKS.forEach(b=>{
+    if(bl && b.id !== bl.id) return;
+    if(!bl){ out.push(`## ${b.n} ${b.title} — ${b.who}`); out.push(""); }
+    b.qs.forEach((q,i)=>{
+      const k = b.id + "-" + (i+1);
+      const v = store[k];
+      out.push(`${b.n}.${String(i+1).padStart(2,"0")}${v.blocking ? " [BLOQUEANTE]" : ""} ${q.t}`);
+      if(v.s && v.s !== STATUS[0]) out.push(`Situação: ${v.s}`);
+      out.push(`R: ${v.a && v.a.trim() ? v.a.trim() : "(sem resposta)"}`);
+      out.push("");
+    });
+  });
+  return out.join("\n");
+}
+const toast = document.getElementById("toast");
+function flash(msg){
+  toast.textContent = msg; toast.classList.add("on");
+  setTimeout(()=>toast.classList.remove("on"), 1600);
+}
+function copy(txt, msg){
+  const done = ()=>flash(msg);
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(txt).then(done, ()=>fallback(txt,done));
+  } else fallback(txt,done);
+}
+function fallback(txt, done){
+  const ta = document.createElement("textarea");
+  ta.value = txt; ta.style.position="fixed"; ta.style.opacity="0";
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand("copy"); done(); }
+  catch(e){ flash("Não consegui copiar — selecione o texto manualmente"); }
+  document.body.removeChild(ta);
+}
+main.addEventListener("click", e=>{
+  const b = e.target.closest("button[data-block]");
+  if(b) copy(textFor(b.dataset.block), "Bloco copiado");
+});
+document.getElementById("copyAll").addEventListener("click", ()=>copy(textFor(null), "Tudo copiado"));
+document.getElementById("clear").addEventListener("click", ()=>{
+  if(!confirm("Apagar todas as respostas desta página?")) return;
+  Object.keys(store).forEach(k=>{ store[k].a=""; store[k].s=""; });
+  document.querySelectorAll("textarea").forEach(t=>t.value="");
+  document.querySelectorAll("select").forEach(s=>s.selectedIndex=0);
+  save(); refresh(); flash("Respostas apagadas");
+});
+
+load(); refresh();
+</script>

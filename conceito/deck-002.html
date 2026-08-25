@@ -1,0 +1,430 @@
+<title>Téra Identidade 002</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap">
+
+<style>
+:root{
+  --black:#080808;
+  --white:#f5f5f2;
+  --paper:#eeeeeb;
+  --panel:#151515;
+  --forest:#202020;
+  --gray:#747470;
+  --muted:#92928e;
+  --bronze:#b0b0ac;
+  --leaf:#b8b8b4;
+  --mint:#d4d4d0;
+  --lilac:#d8d8d4;
+  --r:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#000;
+  color:var(--black);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+}
+::selection{background:var(--black);color:var(--white)}
+
+.opening{display:grid;gap:8px;padding:8px}
+.pane{position:relative;overflow:hidden;border-radius:var(--r);background:var(--paper);isolation:isolate}
+
+/* ---------------- capa · mônada ---------------- */
+.cover{min-height:100svh}
+.monadaStage{
+  position:absolute;inset:0;z-index:0;
+  background:radial-gradient(circle at 56% 42%,#fff 0,#f5f5f2 34%,#dededb 68%,#c7c7c3 100%);
+  display:flex;align-items:center;justify-content:center;
+}
+.monada{
+  width:min(62vw,660px);aspect-ratio:1;display:block;
+  transform:translate(5%,-5%);
+  cursor:grab;touch-action:pan-y;
+}
+.monada:active{cursor:grabbing}
+.coverFrame{
+  position:relative;z-index:1;display:grid;min-height:100svh;
+  grid-template-rows:auto 1fr auto;padding:clamp(28px,4vw,62px);
+}
+.coverMeta{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  color:#4e4e4a;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+.coverMeta a{color:inherit;text-decoration:none}
+.coverTitle{align-self:end;width:100%;padding-bottom:clamp(68px,8vh,110px)}
+.coverTitle h1{font-size:clamp(76px,8vw,128px);font-weight:400;letter-spacing:-.05em;line-height:.85}
+.coverTitle p{font-size:clamp(38px,6.2vw,104px);font-weight:400;letter-spacing:-.05em;line-height:.85;white-space:nowrap}
+.coverFooter{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;color:#3f3f3b;font-size:10px;line-height:1.4}
+.coverFooter>div{max-width:42ch}
+.rule{display:block;width:72px;height:1px;margin-bottom:18px;border-radius:999px;background:var(--black)}
+.coverFooter a{color:var(--black);text-decoration:none;font-size:9px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--black);padding-bottom:6px}
+
+/* ---------------- cards ---------------- */
+.card{padding:clamp(26px,4vw,64px)}
+.card--dark{background:var(--panel);color:var(--white)}
+.card--forest{background:var(--forest);color:var(--white)}
+.card--paper{background:var(--white)}
+.card--mint{background:var(--mint)}
+.card--lilac{background:var(--lilac)}
+
+.eyebrow{font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:#4e4e4a}
+.card--dark .eyebrow,.card--forest .eyebrow{color:var(--leaf)}
+
+.display{font-weight:400;letter-spacing:-.05em;line-height:.88;font-size:clamp(44px,7vw,112px);text-wrap:balance}
+.display--sm{font-size:clamp(28px,3.6vw,54px);line-height:.98;letter-spacing:-.038em}
+.lede{font-size:clamp(14px,1.15vw,19px);line-height:1.42;color:#3f3f3b;max-width:46ch;letter-spacing:-.01em}
+.card--dark .lede,.card--forest .lede{color:var(--bronze)}
+
+/* faixa de capa de conceito */
+.band{display:grid;grid-template-rows:auto 1fr auto;min-height:clamp(340px,52vh,620px);gap:clamp(18px,2.6vw,40px)}
+.band .display{align-self:end}
+.band>*{position:relative;z-index:1}
+
+/* fluxograma */
+.fx svg{display:block;width:100%;height:auto;color:var(--black);margin-top:clamp(20px,3vw,44px)}
+
+/* entregas */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:clamp(16px,1.8vw,30px);margin-top:clamp(26px,3.4vw,52px)}
+.item{border-top:1px solid currentColor;padding-top:clamp(11px,1.2vw,17px);display:flex;flex-direction:column;gap:7px}
+.item .n{font-size:9px;letter-spacing:.14em;font-weight:500;opacity:.4}
+.item .t{font-size:clamp(16px,1.4vw,23px);line-height:1.1;letter-spacing:-.028em;font-weight:400}
+.item .d{font-size:clamp(12px,0.95vw,14.5px);line-height:1.45;color:#4e4e4a;letter-spacing:-.005em}
+.card--dark .item,.card--forest .item{border-color:rgba(245,245,242,.24)}
+.card--dark .item .d,.card--forest .item .d{color:var(--bronze)}
+
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(18px,2.2vw,38px);margin-top:clamp(28px,3.4vw,52px)}
+.cols .k{display:block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:#4e4e4a;margin-bottom:9px}
+.cols p{font-size:clamp(13px,1vw,15.5px);line-height:1.48;letter-spacing:-.008em}
+
+/* texturas */
+.tex{position:absolute;inset:0;pointer-events:none;z-index:0}
+.tex--cells{background-image:linear-gradient(90deg,rgba(245,245,242,.09) 0 1px,transparent 1px),linear-gradient(0deg,rgba(245,245,242,.09) 0 1px,transparent 1px);background-size:calc(100%/24) calc(100%/24)}
+.tex--moire i{position:absolute;inset:-14%;display:block}
+.tex--moire .l1{background:repeating-linear-gradient(0deg,rgba(8,8,8,.26) 0 2px,transparent 2px 7px)}
+.tex--moire .l2{background:repeating-linear-gradient(2.6deg,rgba(8,8,8,.26) 0 2px,transparent 2px 7px)}
+
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:#4e4e4a;
+  padding:clamp(18px,2.4vw,34px) clamp(26px,4vw,64px)}
+
+@media (max-width:760px){
+  .opening{gap:7px;padding:7px}
+  .pane{border-radius:15px}
+  .coverMeta span:not(:first-child){display:none}
+  .coverTitle h1{font-size:clamp(70px,23vw,94px)}
+  .coverTitle p{font-size:clamp(30px,11vw,48px)}
+  .monada{width:82vw;transform:translate(3%,-3%)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="opening">
+
+  <!-- ============ CAPA · MÔNADA ============ -->
+  <section class="pane cover" aria-labelledby="capa-title">
+    <div class="monadaStage" aria-hidden="true"><canvas id="monada" class="monada"></canvas></div>
+    <div class="coverFrame">
+      <div class="coverMeta">
+        <a href="https://theforce.cc" target="_blank" rel="noreferrer">THEFORCE..BRAZIL · SP–BR</a>
+        <span>Mata São Paulo</span>
+        <span>24.08.2026</span>
+      </div>
+      <div class="coverTitle">
+        <h1 id="capa-title">TÉRA</h1>
+        <p>IDENTIDADE DE MARCA</p>
+      </div>
+      <div class="coverFooter">
+        <div><span class="rule" aria-hidden="true"></span><p>Conceito e dois caminhos criativos — Da matéria à luz</p></div>
+        <a href="#fluxograma">Role para explorar ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLUXOGRAMA ============ -->
+  <section class="pane card card--paper fx" id="fluxograma">
+    <p class="eyebrow">01 · como chegamos aqui</p>
+    <svg viewBox="0 0 1200 640" role="img" aria-label="Fluxograma: o nome, a obra e a categoria convergem para o conceito Da matéria à luz; a pergunta como a matéria vira luz divide em onda e partícula, que se tornam os conceitos Plasma e Chapa.">
+      <defs>
+        <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+
+      <g font-size="10" letter-spacing="1.7" fill="currentColor" opacity=".42" text-anchor="middle">
+        <text x="180" y="16">O NOME</text>
+        <text x="600" y="16">A OBRA</text>
+        <text x="1020" y="16">A CATEGORIA</text>
+      </g>
+      <g font-size="23" font-weight="400" fill="currentColor" text-anchor="middle" letter-spacing="-0.7">
+        <text x="180" y="54">teras · tera · terra</text>
+        <text x="600" y="54">escavada em volta dos pilares</text>
+        <text x="1020" y="54">espetáculos</text>
+        <text x="1020" y="80">multidimensionais</text>
+      </g>
+      <g font-size="11.5" fill="currentColor" opacity=".45" text-anchor="middle">
+        <text x="180" y="100">solo, origem, matéria</text>
+        <text x="600" y="100">tiraram terra, puseram luz</text>
+        <text x="1020" y="106">múltiplos estados do espaço</text>
+      </g>
+
+      <line x1="180" y1="114" x2="180" y2="152" stroke="currentColor" stroke-width="1" opacity=".32"/>
+      <line x1="600" y1="114" x2="600" y2="152" stroke="currentColor" stroke-width="1" opacity=".32"/>
+      <line x1="1020" y1="120" x2="1020" y2="152" stroke="currentColor" stroke-width="1" opacity=".32"/>
+      <line x1="180" y1="152" x2="1020" y2="152" stroke="currentColor" stroke-width="1" opacity=".32"/>
+      <line x1="600" y1="152" x2="600" y2="198" stroke="currentColor" stroke-width="1.3" marker-end="url(#a)"/>
+
+      <rect x="340" y="204" width="520" height="94" rx="16" fill="#151515"/>
+      <text x="600" y="252" text-anchor="middle" font-size="38" font-weight="400" letter-spacing="-1.6" fill="#f5f5f2">Da matéria à luz</text>
+      <text x="600" y="278" text-anchor="middle" font-size="10" letter-spacing="1.6" fill="#b0b0ac">O CONCEITO</text>
+
+      <line x1="600" y1="298" x2="600" y2="330" stroke="currentColor" stroke-width="1.1"/>
+      <text x="600" y="354" text-anchor="middle" font-size="20" letter-spacing="-0.4" fill="currentColor" opacity=".58">como a matéria vira luz?</text>
+      <line x1="600" y1="370" x2="600" y2="402" stroke="currentColor" stroke-width="1.1"/>
+      <line x1="320" y1="402" x2="880" y2="402" stroke="currentColor" stroke-width="1.1"/>
+      <line x1="320" y1="402" x2="320" y2="436" stroke="currentColor" stroke-width="1.1" marker-end="url(#a)"/>
+      <line x1="880" y1="402" x2="880" y2="436" stroke="currentColor" stroke-width="1.1" marker-end="url(#a)"/>
+
+      <g font-size="10" letter-spacing="1.8" fill="currentColor" opacity=".42" text-anchor="middle">
+        <text x="320" y="464">NÃO OBSERVADA · ONDA</text>
+        <text x="880" y="464">OBSERVADA · PARTÍCULA</text>
+      </g>
+
+      <rect x="120" y="488" width="400" height="140" rx="16" fill="#151515"/>
+      <text x="320" y="528" text-anchor="middle" font-size="10" letter-spacing="1.8" fill="#b0b0ac">CONCEITO 01</text>
+      <text x="320" y="574" text-anchor="middle" font-size="46" font-weight="400" letter-spacing="-2" fill="#f5f5f2">Plasma</text>
+      <text x="320" y="600" text-anchor="middle" font-size="12" fill="#92928e">a sala com as telas ligadas</text>
+
+      <rect x="680" y="488" width="400" height="140" rx="16" fill="#d8d8d4" stroke="currentColor" stroke-width="1" stroke-opacity=".22"/>
+      <text x="880" y="528" text-anchor="middle" font-size="10" letter-spacing="1.8" fill="#4e4e4a">CONCEITO 02</text>
+      <text x="880" y="574" text-anchor="middle" font-size="46" font-weight="400" letter-spacing="-2" fill="#080808">Chapa</text>
+      <text x="880" y="600" text-anchor="middle" font-size="12" fill="#4e4e4a">a sala com as telas desligadas</text>
+    </svg>
+  </section>
+
+  <!-- ============ CONCEITO 01 ============ -->
+  <section class="pane card card--dark band">
+    <div class="tex tex--cells"></div>
+    <p class="eyebrow">02 · conceito 01</p>
+    <h2 class="display">Plasma</h2>
+    <p class="lede">A matéria da Mata reaparece embaixo do chão como luz, e escorre. É a sala com as telas ligadas: contínua, sem borda, sempre nascendo do preto.</p>
+  </section>
+
+  <section class="pane card card--paper">
+    <p class="eyebrow">02.1 · o que entregamos</p>
+    <h3 class="display display--sm" style="margin-top:16px">Seis peças fecham o Plasma.</h3>
+    <div class="grid">
+      <div class="item"><span class="n">01</span><span class="t">Assinatura</span><span class="d">Wordmark vazado, versões e reduções. As letras são vãos: a matéria as preenche por dentro.</span></div>
+      <div class="item"><span class="n">02</span><span class="t">Paleta</span><span class="d">Preto Subsolo como chão fixo. Espectro por temporada, sempre emergindo do preto, nunca como tinta da marca.</span></div>
+      <div class="item"><span class="n">03</span><span class="t">Tipografia</span><span class="d">Família, pesos, escala e o desenho do wordmark na fonte proposta.</span></div>
+      <div class="item"><span class="n">04</span><span class="t">Gramática visual</span><span class="d">A lei de entrada pela fresta, o grão calibrado no pixel real da sala e a biblioteca de matéria por temporada.</span></div>
+      <div class="item"><span class="n">05</span><span class="t">Motion</span><span class="d">Bumper de 3 segundos e filme de 40. A transição-assinatura entre matéria e luz.</span></div>
+      <div class="item"><span class="n">06</span><span class="t">Aplicações</span><span class="d">Reveal, telas Mata São Paulo, OOH digital, Reels e capa de temporada.</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CONCEITO 02 ============ -->
+  <section class="pane card card--lilac band">
+    <div class="tex tex--moire" style="opacity:.48"><i class="l1"></i><i class="l2"></i></div>
+    <p class="eyebrow">03 · conceito 02</p>
+    <h2 class="display">Chapa</h2>
+    <p class="lede">A sala desligada já é o desenho da marca: um plano que se corta, se dobra e se abre em vão. É o caminho ligado à arquitetura, como vocês pediram.</p>
+  </section>
+
+  <section class="pane card card--paper">
+    <p class="eyebrow">03.1 · o que entregamos</p>
+    <h3 class="display display--sm" style="margin-top:16px">Seis peças fecham a Chapa.</h3>
+    <div class="grid">
+      <div class="item"><span class="n">01</span><span class="t">Assinatura</span><span class="d">Wordmark sólido e vazado a corte. A marca aparece por subtração, com luz atravessando por trás.</span></div>
+      <div class="item"><span class="n">02</span><span class="t">Paleta</span><span class="d">Acromática: Preto Subsolo, Branco Cal e Pedra. Uma cor por temporada, entrando como dado e não como tinta.</span></div>
+      <div class="item"><span class="n">03</span><span class="t">Tipografia</span><span class="d">Grotesca técnica alinhada ao módulo, com sistema editorial para line-up e grade de programação.</span></div>
+      <div class="item"><span class="n">04</span><span class="t">Gramática visual</span><span class="d">O grid de 24 colunas, os formatos nativos da sala, a emenda assumida e a trama em interferência.</span></div>
+      <div class="item"><span class="n">05</span><span class="t">Motion</span><span class="d">Varredura: células acendendo em sequência, borda dura, como a sala ligando.</span></div>
+      <div class="item"><span class="n">06</span><span class="t">Aplicações</span><span class="d">Fachada, tótem no Drop-Off, ingresso, sinalização, line-up e peça corporativa.</span></div>
+    </div>
+  </section>
+
+  <!-- ============ FECHO ============ -->
+  <section class="pane card card--mint">
+    <p class="eyebrow">04 · a decisão</p>
+    <h3 class="display display--sm" style="margin-top:16px;max-width:19ch">Chapa é a moldura. Plasma é o que a preenche.</h3>
+    <div class="cols">
+      <div><span class="k">Não são concorrentes</span><p>Os dois são os dois estados reais da sala. A escolha define qual vira o sistema-mestre e qual entra como comportamento.</p></div>
+      <div><span class="k">Depois da decisão</span><p>A rota escolhida evolui para sistema completo: variações, proporções, regras e aplicações-mestre, do key visual ao painel.</p></div>
+      <div><span class="k">O que precisamos de vocês</span><p>Confirmação das cotas face a face, o que o “32K” designa, o desenho cotado das grades, a imagem do Drop-Off e a confirmação por escrito do posicionamento.</p></div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span>©The Force — design imersivo e experiências visuais</span>
+    <span>para Mata São Paulo : Téra — sala de espetáculos multidimensionais</span>
+    <span>theforce.cc</span>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var cv = document.getElementById('monada');
+  if(!cv) return;
+  var gl = cv.getContext('webgl', {alpha:true, premultipliedAlpha:false, antialias:true});
+  if(!gl){ cv.style.display='none'; return; }
+
+  var VS = [
+    'attribute vec2 a;',
+    'void main(){ gl_Position = vec4(a,0.0,1.0); }'
+  ].join('\n');
+
+  var FS = [
+    'precision highp float;',
+    'uniform vec2  uRes;',
+    'uniform mat3  uInv;',
+    'uniform float uBreath;',
+
+    'float sdTorus(vec3 p, vec2 t){ vec2 q = vec2(length(p.xz)-t.x, p.y); return length(q)-t.y; }',
+
+    'float map(vec3 p){',
+    '  vec3 q = uInv * p;',
+    '  float s = uBreath;',
+    '  float d1 = sdTorus(q, vec2(1.40*s, 0.42*s));',
+    '  float d2 = length(q) - 0.336*s;',
+    '  return min(d1,d2);',
+    '}',
+
+    'vec3 calcNormal(vec3 p){',
+    '  vec2 e = vec2(1.0,-1.0)*0.0012;',
+    '  return normalize( e.xyy*map(p+e.xyy) + e.yyx*map(p+e.yyx) + e.yxy*map(p+e.yxy) + e.xxx*map(p+e.xxx) );',
+    '}',
+
+    'vec3 env(vec3 r){',
+    '  float y = r.y;',
+    '  vec3 c = mix(vec3(0.40), vec3(0.96), smoothstep(-0.65,0.88,y));',
+    '  c = mix(c, vec3(1.28), smoothstep(0.52,0.99,y)*0.80);',
+    '  vec3 L1 = normalize(vec3( 0.55, 0.66, 0.42));',
+    '  vec3 L2 = normalize(vec3(-0.72, 0.26,-0.56));',
+    '  vec3 L3 = normalize(vec3( 0.10,-0.55, 0.80));',
+    '  c += vec3(1.00)*pow(max(dot(r,L1),0.0),26.0);',
+    '  c += vec3(0.58)*pow(max(dot(r,L2),0.0),14.0);',
+    '  c += vec3(0.30)*pow(max(dot(r,L3),0.0),20.0);',
+    '  c += vec3(0.22)*smoothstep(0.055,0.0,abs(y+0.02));',
+    '  c = mix(c, vec3(0.27), smoothstep(-0.18,-0.80,y));',
+    '  return c;',
+    '}',
+
+    'void main(){',
+    '  vec2 uv = (gl_FragCoord.xy - 0.5*uRes) / uRes.y;',
+    '  vec3 ro = vec3(0.0, 0.0, 5.0);',
+    '  vec3 rd = normalize(vec3(uv, -1.0));',
+
+    '  float t = 0.0; float hit = 0.0; float steps = 0.0;',
+    '  for(int i=0;i<96;i++){',
+    '    vec3 p = ro + rd*t;',
+    '    float d = map(p);',
+    '    if(d < 0.0016){ hit = 1.0; break; }',
+    '    t += d*0.92;',
+    '    steps += 1.0;',
+    '    if(t > 9.0) break;',
+    '  }',
+
+    '  if(hit < 0.5){ gl_FragColor = vec4(0.0); return; }',
+
+    '  vec3 p = ro + rd*t;',
+    '  vec3 n = calcNormal(p);',
+    '  vec3 r = reflect(rd, n);',
+    '  vec3 col = env(r);',
+
+    '  float fres = pow(1.0 - max(dot(n,-rd),0.0), 5.0);',
+    '  col = col*(1.0-0.25*fres) + env(r)*fres*0.85 + fres*0.10;',
+
+    '  float ao = 1.0 - steps/110.0;',
+    '  col *= mix(0.82, 1.0, clamp(ao,0.0,1.0));',
+
+    '  col = col/(col+vec3(0.92));',
+    '  col = pow(col, vec3(0.4545));',
+    '  float edge = smoothstep(0.0,0.035, abs(dot(n,-rd)));',
+    '  gl_FragColor = vec4(col, mix(0.72,1.0,edge));',
+    '}'
+  ].join('\n');
+
+  function sh(type, src){
+    var s = gl.createShader(type);
+    gl.shaderSource(s, src); gl.compileShader(s);
+    if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { return null; }
+    return s;
+  }
+  var vs = sh(gl.VERTEX_SHADER, VS), fs = sh(gl.FRAGMENT_SHADER, FS);
+  if(!vs || !fs){ cv.style.display='none'; return; }
+  var pr = gl.createProgram();
+  gl.attachShader(pr, vs); gl.attachShader(pr, fs); gl.linkProgram(pr);
+  if(!gl.getProgramParameter(pr, gl.LINK_STATUS)){ cv.style.display='none'; return; }
+  gl.useProgram(pr);
+
+  var buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+  var loc = gl.getAttribLocation(pr,'a');
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+  var uRes = gl.getUniformLocation(pr,'uRes');
+  var uInv = gl.getUniformLocation(pr,'uInv');
+  var uBreath = gl.getUniformLocation(pr,'uBreath');
+
+  gl.enable(gl.BLEND);
+  gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+
+  function resize(){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = Math.max(1, Math.round(cv.clientWidth * dpr));
+    var h = Math.max(1, Math.round(cv.clientHeight * dpr));
+    if(cv.width !== w || cv.height !== h){ cv.width = w; cv.height = h; }
+    gl.viewport(0,0,cv.width,cv.height);
+    gl.uniform2f(uRes, cv.width, cv.height);
+  }
+  window.addEventListener('resize', resize);
+
+  var ax = 0.35, ay = 0.6, az = 0.0;
+  var dragging = false, px = 0, py = 0, vx = 0, vy = 0;
+  cv.addEventListener('pointerdown', function(e){ dragging = true; px = e.clientX; py = e.clientY; cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener('pointermove', function(e){
+    if(!dragging) return;
+    vy = (e.clientX - px) * 0.008; vx = (e.clientY - py) * 0.008;
+    ay += vy; ax += vx; px = e.clientX; py = e.clientY;
+  });
+  function stop(){ dragging = false; }
+  cv.addEventListener('pointerup', stop);
+  cv.addEventListener('pointercancel', stop);
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var last = 0;
+
+  function mul(A,B){
+    var C = new Float32Array(9);
+    for(var i=0;i<3;i++) for(var j=0;j<3;j++){
+      C[i*3+j] = A[i*3+0]*B[0*3+j] + A[i*3+1]*B[1*3+j] + A[i*3+2]*B[2*3+j];
+    }
+    return C;
+  }
+  function rotX(a){var c=Math.cos(a),s=Math.sin(a);return new Float32Array([1,0,0, 0,c,-s, 0,s,c]);}
+  function rotY(a){var c=Math.cos(a),s=Math.sin(a);return new Float32Array([c,0,s, 0,1,0, -s,0,c]);}
+  function rotZ(a){var c=Math.cos(a),s=Math.sin(a);return new Float32Array([c,-s,0, s,c,0, 0,0,1]);}
+
+  function frame(now){
+    var dt = last ? Math.min((now-last)/1000, 0.05) : 0.016;
+    last = now;
+    if(!reduce && !dragging){ ax += 0.5*dt*0.42; ay += 0.75*dt*0.42; az += 0.25*dt*0.42; }
+    if(!dragging){ ay += vy; ax += vx; vy *= 0.94; vx *= 0.94; }
+
+    var R = mul(mul(rotX(ax), rotY(ay)), rotZ(az));
+    resize();
+    gl.uniformMatrix3fv(uInv, false, R);
+    gl.uniform1f(uBreath, reduce ? 1.0 : 1.0 + Math.sin(now/1000*0.9)*0.035);
+    gl.clearColor(0,0,0,0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    requestAnimationFrame(frame);
+  }
+  resize();
+  requestAnimationFrame(frame);
+})();
+</script>

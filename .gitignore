@@ -1,0 +1,8 @@
+# sistema
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# temporarios de trabalho
+_preview/
+*.tmp

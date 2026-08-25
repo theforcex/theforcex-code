@@ -1,0 +1,210 @@
+<title>Roteiro de Apresentação Téra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+
+<style>
+:root{ --paper:#F5F5F4; --ink:#111; --grey:#6b6b68; --rule:#d6d6d2; --alert:#b23; --ok:#4E6A3E; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:clamp(28px,5vw,68px) clamp(18px,4vw,44px) 20vh}
+
+.mono{font-family:'Space Mono',ui-monospace,monospace}
+.eyebrow{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey)}
+
+header{border-bottom:1px solid var(--ink);padding-bottom:26px;margin-bottom:44px}
+h1{font-size:clamp(30px,5vw,54px);font-weight:500;letter-spacing:-.035em;line-height:1.02;margin:14px 0 12px}
+.sub{color:var(--grey);max-width:56ch;font-size:clamp(14px,1.2vw,17px)}
+
+section{margin-top:clamp(38px,6vw,72px)}
+h2{font-size:clamp(20px,2.4vw,30px);font-weight:500;letter-spacing:-.024em;line-height:1.1;margin:10px 0 20px;text-wrap:balance}
+h3{font-size:clamp(15px,1.5vw,19px);font-weight:600;letter-spacing:-.012em;margin:26px 0 8px}
+p{margin:0 0 12px;max-width:70ch}
+p.lead{font-size:clamp(15px,1.35vw,19px)}
+strong{font-weight:600}
+em{font-style:italic}
+
+.passo{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--rule)}
+.passo .n{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--grey);padding-top:3px}
+.passo p{margin:0 0 8px}
+.passo .cit{border-left:2px solid var(--ink);padding:2px 0 2px 12px;margin:8px 0;font-size:14px;color:#333}
+.passo .cit span{display:block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin-top:5px}
+
+.fala{background:#fff;border:1px solid var(--rule);border-left:3px solid var(--ink);padding:16px 18px;margin:10px 0 18px}
+.fala .k{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);display:block;margin-bottom:8px}
+.fala p{margin:0;font-size:15.5px;line-height:1.55}
+
+.q{border-top:1px solid var(--rule);padding:20px 0}
+.q .pergunta{font-weight:600;font-size:16px;margin-bottom:10px;color:var(--alert)}
+.q .resposta{background:#fff;border:1px solid var(--rule);padding:14px 16px;font-size:15px;line-height:1.55}
+
+.cede{border-top:1px solid var(--rule);padding:16px 0;display:grid;grid-template-columns:minmax(140px,220px) 1fr;gap:18px}
+.cede b{font-weight:600;font-size:14.5px}
+.cede p{margin:0;font-size:14.5px;color:#333}
+
+ul{margin:0 0 14px;padding-left:20px;max-width:70ch}
+li{margin-bottom:7px}
+li::marker{color:var(--grey)}
+
+.box{border:1px dashed var(--grey);padding:18px 20px;margin:18px 0}
+.box h3{margin-top:0}
+.box--alert{border-color:var(--alert)}
+.box--alert h3{color:var(--alert)}
+
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14.5px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);border-bottom:1px solid var(--ink)}
+td.no{color:var(--alert)}
+td.si{color:var(--ok)}
+
+footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--ink);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Téra × The Force · Documento interno · Não vai para o cliente</p>
+  <h1>Roteiro de apresentação</h1>
+  <p class="sub">Como chegamos ao conceito, o que dizer em cada estágio, as perguntas que vão vir e o que conceder na hora.</p>
+</header>
+
+<section>
+  <p class="eyebrow">01 · A justificativa</p>
+  <h2>Como chegamos em “Da matéria à luz”</h2>
+  <p class="lead">A frase que abre a reunião é esta: <strong>o conceito não veio de fora. Ele estava no material de vocês, dividido em três lugares — e a obra já tinha feito.</strong></p>
+  <p>O caminho, na ordem em que você vai contar:</p>
+
+  <div class="passo"><span class="n">01</span><div>
+    <p><strong>Começamos pelo nome, porque ele já é uma definição.</strong> O slide 10 não batiza por som: explica três raízes, e uma delas é matéria literal.</p>
+    <div class="cit">“Sua sonoridade aproxima-se de <em>terra</em>, referência ao solo como origem, matéria e fundamento.”<span>deck de briefing · slide 10</span></div>
+    <p>As outras duas fecham o arco: <em>teras</em> é o prodígio, o que rompe a ordem comum; <em>tera</em> é o prefixo de escala monumental. Extraordinário, enorme, nascido do chão.</p>
+  </div></div>
+
+  <div class="passo"><span class="n">02</span><div>
+    <p><strong>Fomos ver se a obra confirmava.</strong> Confirmou, e de forma literal: para receber o projeto, escavou-se o subsolo, e o LED ocupa o plano escavado.</p>
+    <div class="cit">“Parte dessas estruturas foi escavada à mão, para manter a integridade da estrutura original.”<span>respostas do cliente · 21.08, item 3</span></div>
+    <p>Aqui está o ponto que sustenta tudo: <strong>a mesma obra tirou matéria opaca e pôs matéria luminosa no lugar dela</strong>. Não é analogia. É a sequência construtiva.</p>
+  </div></div>
+
+  <div class="passo"><span class="n">03</span><div>
+    <p><strong>Depois testamos contra a categoria que vocês nomearam.</strong> E ela também é sobre mudar de estado — está escrito no slide 07, entre as seis características.</p>
+    <div class="cit">“Múltiplos estados do espaço: a sala muda de configuração, comportamento e escala conforme cada projeto.”<span>deck de briefing · slide 07</span></div>
+    <p>Três documentos, três vocabulários — etimologia, engenharia e categoria — e a mesma operação nos três.</p>
+  </div></div>
+
+  <div class="passo"><span class="n">04</span><div>
+    <p><strong>E o conceito já vinha com os dois caminhos dentro.</strong> Ele tem duas palavras. Vocês pediram dois caminhos visuais, um deles ligado à arquitetura da Sala. Matéria é esse. Luz é o outro.</p>
+    <p>Não precisamos inventar uma bifurcação: <strong>ela estava na própria frase</strong>.</p>
+  </div></div>
+</section>
+
+<section>
+  <p class="eyebrow">02 · Rigor</p>
+  <h2>Os caminhos que testamos e descartamos</h2>
+  <p>Vale contar, porque mostra que a rota escolhida sobreviveu a filtro — e desarma a pergunta “vocês consideraram outras coisas?”.</p>
+  <table>
+    <thead><tr><th>Rota testada</th><th>Por que caiu</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Dobrar os tecidos da realidade</strong></td><td class="no">Boa tese de identidade flexível, mas sem forma desenhável. Metáfora sem operação: não dá para dizer o que é o desenho de uma dobra.</td></tr>
+      <tr><td><strong>Escavar / o vão</strong></td><td class="no">Falava do continente, não do que acontece dentro. Para uma casa que vive de temporada e line-up, conceito sobre arquitetura não sustenta dez anos.</td></tr>
+      <tr><td><strong>Onda e partícula</strong></td><td class="no">Sedutor e frágil. A dualidade não acontece na sala de forma que o público experimente, e o “observador” da física é um aparato de medição, não uma pessoa com ponto de vista. Um jornalista de tecnologia derruba.</td></tr>
+      <tr><td><strong>Da matéria à luz</strong></td><td class="si">Ficou porque é verificável no local, está escrito em três documentos do cliente, e já traz os dois caminhos dentro.</td></tr>
+    </tbody>
+  </table>
+  <p>A difração, o moiré e o grão não se perderam: viraram <strong>repertório gráfico do caminho Plasma</strong>. Só pararam de ser a espinha lógica.</p>
+</section>
+
+<section>
+  <p class="eyebrow">03 · Na sala</p>
+  <h2>Abertura e fechamento, para decorar</h2>
+  <div class="fala">
+    <span class="k">Abertura</span>
+    <p>“Antes de começar, duas coisas. Uma: tudo que estiver entre aspas neste material é texto de vocês, com a fonte do lado — o que é leitura nossa está marcado como leitura nossa. Duas: no fim tem uma página de pendências, e ela tem três perguntas que travam produção. Dito isso — o conceito não veio de fora. Ele estava no nome, e a obra já tinha feito.”</p>
+  </div>
+  <div class="fala">
+    <span class="k">Fechamento</span>
+    <p>“A fundação continua de pé, e o LED ocupa o plano que foi escavado para recebê-lo. Matéria saiu, luz entrou, na mesma obra. É esse o percurso que a marca desenha: Chapa na moldura, Plasma no que muda. Nossa recomendação é a Chapa como sistema base, e está assinada. O que falta a gente sabe o que é, está na última página, e tem data.”</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">04 · Defesa</p>
+  <h2>As seis perguntas que vão vir</h2>
+
+  <div class="q">
+    <p class="pergunta">“‘Da matéria à luz’ diz alguma coisa sobre o quinto espetáculo, ou já se esgotou na inauguração?”</p>
+    <div class="resposta">Como trajeto de obra, se esgota — você tem razão. Por isso ele não é trajeto, é o estado da casa: aqui matéria e luz trocam de lugar, e isso acontece de novo a cada montagem. A prova é do material de vocês: narrativa visual da sala reinterpretada por cada artista, a cada temporada. A matéria é a constante, a luz é o que muda.</div>
+  </div>
+
+  <div class="q">
+    <p class="pergunta">“O que esse conceito me proíbe de fazer?”</p>
+    <div class="resposta">Proíbe conteúdo que ignora a sala — projeção genérica que rodaria em qualquer telão. E proíbe esconder a construção: emenda, módulo e grade ficam à vista, na marca e na casa. O que ele ainda não faz é escolher público e concorrente. Essa página falta, e é a próxima entrega, com data.</div>
+  </div>
+
+  <div class="q">
+    <p class="pergunta">“Vocês estão dizendo que tiraram a memória do prédio e puseram LED no lugar?”</p>
+    <div class="resposta">O contrário. A fundação foi escavada à mão, e não com máquina, justamente para que ela continuasse de pé. A memória ficou — ela é o que segura a sala. A luz chegou depois, no plano que a obra abriu para recebê-la.</div>
+  </div>
+
+  <div class="q">
+    <p class="pergunta">“Onde está o 32K, o maior painel indoor da América Latina, o Sul Global?”</p>
+    <div class="resposta">O 32K é a maior credencial do projeto e a gente não põe número em peça pública sem saber o que ele mede — essa pergunta ficou sem resposta no PDF de 21.08 e está na nossa lista. O Sul Global ficou de fora do conceito de propósito: território é a camada que mais cobra lastro, e ela entra com curadoria e programação atrás. É decisão de vocês, não nossa.</div>
+  </div>
+
+  <div class="q">
+    <p class="pergunta">“Qual dos dois vocês recomendam?”</p>
+    <div class="resposta">Chapa como sistema base. Porque nasce do único direcionamento que vocês escreveram — quadrado, retângulo, a grade de 1×1 m que reveste a sala — e porque sobrevive pequeno, monocromático e em letreiro de fachada. Plasma não some: vira a camada de temporada que cada artista reinterpreta. Um sistema, dois estados.</div>
+  </div>
+
+  <div class="q">
+    <p class="pergunta">“Isso não vale para qualquer LED do planeta?”</p>
+    <div class="resposta">O parágrafo da física, sim — ele é narração, não é o conceito. O que não vale para qualquer lugar é a obra: escavaram esta fundação, à mão, para receber esta sala. Isso só aconteceu aqui.</div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">05 · Disciplina</p>
+  <h2>O que conceder na hora, sem brigar</h2>
+  <div class="cede"><b>O parágrafo da física</b><p>Se disserem que é genérico: “Vale. Ele é narração, não é o conceito.” Não brigue — custa mais do que rende.</p></div>
+  <div class="cede"><b>“É criar uma categoria”</b><p>“Concordo, é a frase mais gasta do setor — e a categoria é de vocês, não nossa: espetáculos multidimensionais, slide 13.” Conceder aqui mostra domínio do deck.</p></div>
+  <div class="cede"><b>Lygia Clark</b><p>Se alguém do nosso time trouxer na sala: “Referência interna de moodboard, não entra no material.” Encerre. Nome de artista em deck comercial como linhagem é exposição desnecessária.</p></div>
+  <div class="cede"><b>Teras / teratologia</b><p>Se puxarem o lado “monstro”: “É a mesma raiz, sim — prodígio e monstro rompem a ordem. Para uma casa de espetáculo é a favor.” Se o cliente ficar desconfortável, ceda a célula inteira: o nome se sustenta em terra e tera.</p></div>
+  <div class="cede"><b>A falta do estágio de mercado</b><p>Não invente na hora. “Falta. É a próxima entrega, com público, concorrente e promessa em uma página.”</p></div>
+</section>
+
+<section>
+  <p class="eyebrow">06 · Última página</p>
+  <h2>Pendências para levar</h2>
+  <div class="box box--alert">
+    <h3>As três que travam produção</h3>
+    <ul>
+      <li><strong>O que exatamente o “32K” designa</strong> — a pergunta foi feita em 21.08 e ficou sem resposta. Sem isso não há mapping, canvas de saída nem colorimetria.</li>
+      <li><strong>Largura × altura de cada uma das quatro faces</strong> — o diagrama enviado dá dois valores para altura e dois para profundidade. E a área total em m² não foi informada.</li>
+      <li><strong>Fabricante, modelo e integrador do LED.</strong></li>
+    </ul>
+  </div>
+  <div class="box">
+    <h3>As que confirmam o que estamos afirmando</h3>
+    <ul>
+      <li><strong>O LED ocupa o plano escavado</strong> — a gente sabe da obra, mas não está por escrito em nenhum documento. Pedir uma linha confirmando, porque é a base do conceito.</li>
+      <li><strong>Os pilares ficam aparentes na versão final?</strong> A pergunta foi feita em 21.08 e o cliente respondeu só a origem deles, não o acabamento.</li>
+      <li><strong>Confirmação por escrito do “mais entretenimento”</strong> — o input do Ciao é de 22.08 e segue verbal.</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h3>Material que ainda não veio</h3>
+    <ul>
+      <li>Planta, cortes e elevações em escala; modelo 3D.</li>
+      <li>Desenho cotado do padrão das grades de 1×1 m.</li>
+      <li>Imagem do Drop-Off — citada no PDF (“a porta à direita da imagem”) e não anexada.</li>
+      <li>Definição do que <em>não</em> é tela: piso, estrutura, acabamentos.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <span>Téra × The Force · Roteiro interno</span>
+  <span>Auditado em seis lentes: fato, cliente cético, física, arte, risco, cobertura</span>
+</footer>
+
+</div>
