@@ -6,3 +6,6 @@ desktop.ini
 # temporarios de trabalho
 _preview/
 *.tmp
+
+# copias carimbadas do mesmo documento (~192 MB); o arquivo vivo basta
+conceito/backups/
